@@ -1,0 +1,24 @@
+<!-- ko if: getDefaultNoteFieldState() == 2 -->
+<div class="payment-option opc-payment-additional note last">
+    <div class="payment-option-title field choice">
+        <span data-bind="i18n: 'Write a note for the vendor'"></span>
+    </div>
+    <div class="payment-option-content">
+        <!-- ko template: 'DeveloperHub_OrderNote/checkout/order-note-form' --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: getDefaultNoteFieldState() != 2 -->
+<div class="payment-option _collapsible opc-payment-additional order-note note last"
+	 data-bind="mageInit: {'collapsible':{'openedState': '_active', 'active': isDefaultNoteFieldStateExpanded()}}">
+    <div class="payment-option-title field choice" data-role="title">
+        <span class="action action-toggle" role="heading" aria-level="2">
+            <!-- ko i18n: 'Write a note for the vendor'--><!-- /ko -->
+        </span>
+    </div>
+    <div class="payment-option-content" data-role="content">
+	 <!-- ko template: 'DeveloperHub_OrderNote/checkout/order-note-form' --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko -->

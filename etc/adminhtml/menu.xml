@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DeveloperHub_OrderNote::menu"
+             title="Order Note"
+             module="DeveloperHub_OrderNote"
+             sortOrder="50"
+             resource="DeveloperHub_OrderNote::menu"
+             parent="DeveloperHub_Core::developerhub"
+        />
+        <add id="DeveloperHub_OrderNote::configuration"
+             title="Configuration"
+             module="DeveloperHub_OrderNote"
+             sortOrder="10"
+             action="adminhtml/system_config/edit/section/order_note"
+             resource="DeveloperHub_OrderNote::config"
+             parent="DeveloperHub_OrderNote::menu"
+        />
+    </menu>
+</config>

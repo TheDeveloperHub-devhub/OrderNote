@@ -1,0 +1,21 @@
+<?php
+
+use Magento\Framework\Escaper;
+use DeveloperHub\OrderNote\Block\Order\Note;
+
+/** @var Escaper $escaper */
+/** @var Note $block */
+
+?>
+
+<?php $note = $block->getOrderNote();
+    if ($note): ?>
+    <section class="admin__page-section order-note">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $escaper->escapeHtml(__('Order Note')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?= /* @noEscape */ nl2br($escaper->escapeHtml($note)) ?>
+        </div>
+    </section>
+<?php endif; ?>

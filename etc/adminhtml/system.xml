@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="order_note" translate="label" type="text" sortOrder="435" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Order Note</label>
+            <tab>developerhub</tab>
+            <resource>DeveloperHub_OrderNote::order_note_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General</label>
+                <field id="state" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order Note State On The Checkout Page</label>
+                    <source_model>DeveloperHub\OrderNote\Model\Config\Source\State</source_model>
+                </field>
+                <field id="show_in_my_account" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Order Note in the Customer Account?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If 'Yes' the order note will show on customer frontend account,
+					in 'My Account -> My Orders -> View Order'</comment>
+                </field>
+                <field id="max_length" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Characters Length (limit)</label>
+                    <validate>validate-number</validate>
+                    <comment>Write the number of maximum characters allowed for the order note at the checkout page.
+						Eg: 100. Leave empty for no characters limit.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/guest-carts/:cartId/set-order-note" method="PUT">
+        <service class="DeveloperHub\OrderNote\Api\GuestOrderNoteManagementInterface"
+		          method="saveOrderNote"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Managing checkout order note -->
+    <route url="/V1/carts/mine/set-order-note" method="PUT">
+        <service class="DeveloperHub\OrderNote\Api\OrderNoteManagementInterface"
+		         method="saveOrderNote"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+</routes>

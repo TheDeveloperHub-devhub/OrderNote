@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="DeveloperHub\OrderNote\Api\Data\OrderNoteInterface"
+             	type="DeveloperHub\OrderNote\Model\Data\OrderNote" />
+    <preference for="DeveloperHub\OrderNote\Api\OrderNoteManagementInterface"
+            	type="DeveloperHub\OrderNote\Model\OrderNoteManagement" />
+    <preference for="DeveloperHub\OrderNote\Api\GuestOrderNoteManagementInterface"
+             	type="DeveloperHub\OrderNote\Model\GuestOrderNoteManagement" />
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="developerhub_order_note"
+				      xsi:type="string">sales_order.developerhub_order_note</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="add_order_note" type="DeveloperHub\OrderNote\Plugin\Model\Order\AddOrderNote"/>
+    </type>
+</config>
