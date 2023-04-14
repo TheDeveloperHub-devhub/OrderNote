@@ -15,8 +15,7 @@ order view page.
 
 1. Please run the following command
 ```shell
-composer require developerhub/core
-composer require developerhub/order-note
+composer require devhub/order-note
 ```
 
 2. Update the composer if required
