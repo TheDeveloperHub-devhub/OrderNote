@@ -1,5 +1,5 @@
 {
-    "name": "developerhub/order-note",
+    "name": "devhub/order-note",
     "description": "Sends an order message/note to the vendor",
     "require": {
         "php": ">=7.1.0",
